@@ -1,0 +1,93 @@
+body{
+    font-family: Helvetica;
+    width:100%;
+    background: url("images/food.jpg") no-repeat;
+    background-size:cover;
+    margin: 0;
+}
+.login-cont {
+    position: fixed;
+    width: 400px;
+    background-color: #00ACEE;
+    margin-left: calc(50% - (400px / 2));
+    top: 150px;
+    height: auto;
+
+}
+.login-cont .form-group {
+    padding: 10px;
+    margin: 10px 50px;
+}
+.login-cont button{
+    width:80px;
+    margin-left: calc(50% - (80px/2));
+    margin-bottom: 15px;
+    background-color: #0d2131;
+    color: #3b86a0;
+    border: none;
+}
+
+.register-cont {
+    position: fixed;
+    width: 400px;
+    background-color: #00ACEE;
+    margin-left: calc(50% - (400px / 2));
+    top: 150px;
+    height: auto;
+}
+.register-cont .form-group {
+    padding: 10px;
+    margin: 10px 50px;
+}
+.form-group label{
+    width: 100px;
+    display: inline-block;
+}
+
+.register-cont button{
+    width:80px;
+    margin-left: calc(50% - (80px/2));
+    margin-bottom: 15px;
+    background-color: #0d2131;
+    color: #3b86a0;
+    border: none;
+}
+#wrapper{
+    background-color: #9babb9;
+}
+input:invalid{
+    border: 1px solid red;
+}
+input:valid{
+    border: 1px solid black;
+}
+label{
+    min-width: 150px;
+}
+
+.left-nav {
+    float: left;
+    display: inline;
+    width: 19%;
+    margin-left: 1%;
+}
+.main-content {
+    float: left;
+    display: inline;
+    width: 78%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.searchBox{
+    display: inline;
+    float: right;
+}
+.searchBox label{
+    display: inline;
+    width: 50px;
+}
+.searchBox input.btn.btn-primary {
+    display: inline;
+    float: right;
+}
