@@ -57,7 +57,7 @@ class Items_model extends CI_Model{
         $delete_item = $this->db->delete('food_item');
         return $delete_item;
     }
-    public function search_items($search){
+    public function search_items($search=' '){
         $this->db->like('prod_name',"$search");
 
         $this->db->select(['product_id','prod_name']);
