@@ -1,5 +1,5 @@
 
-<div id="wrapper">
+<div id="wrapper_view" class="items">
 
     <?php if($this->session->userdata('logged_in')):?>
     <h1>items view page</h1>
@@ -73,6 +73,7 @@
             </tr>
         <?php endforeach;?>
     </table>
+
 
     <?php else: ?>
         <h1>Sorry you are not logged in please go <a href="<?php echo base_url();?>users">here</a> and login.</h1>

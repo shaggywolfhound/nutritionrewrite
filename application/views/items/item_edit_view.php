@@ -7,7 +7,7 @@
  */
 
 include 'assets/variables.php';?>
-<div id="wrapper">
+<div id="wrapper_view" class="item_edit">
 
     <?php if($this->session->userdata('logged_in')):?>
 

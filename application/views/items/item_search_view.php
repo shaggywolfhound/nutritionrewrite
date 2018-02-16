@@ -7,7 +7,7 @@
  */
 ?>
 
-<div id="wrapper">
+<div id="wrapper_view" class="item_search">
 
     <?php if($this->session->userdata('logged_in')):?>
     <h1>Search results page</h1>
