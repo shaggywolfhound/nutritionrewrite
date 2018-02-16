@@ -17,6 +17,14 @@ class Items extends CI_Controller{
         $this->load->view('layouts/main', $data);
     }
 
+    public function limit(){
+        $data = $this->input->get();
+        $result = $this->items_model->get_items_with_limit($data);
+        $data['result'] = $result;
+        $data['main_view'] = 'items/items_view';
+        $this->load->view('layouts/main', $data);
+    }
+
     public function edit($id){
         if (isset($id)) {
             //$this->load->model('items_model');

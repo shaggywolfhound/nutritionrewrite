@@ -50,10 +50,10 @@
     <div class="pages">
         <label>Number of items per page: </label>
         <select>
-            <option value="<?php echo base_url(); ?>items/data?numberOf=12" class="numberof">12 items</option>
-            <option value="<?php echo base_url(); ?>items/data?numberOf=24" class="numberof">24 items</option>
-            <option value="<?php echo base_url(); ?>items/data/?numberOf=36" class="numberof">36 items</option>
-            <option value="<?php echo base_url(); ?>items/data/?numberOf=all" class="numberof">All items</option>
+            <option value="<?php echo base_url(); ?>items/limit/data?numberOf=20" class="numberof">20 items</option>
+            <option value="<?php echo base_url(); ?>items/limit/data?numberOf=50" class="numberof">50 items</option>
+            <option value="<?php echo base_url(); ?>items/limit/data/?numberOf=100" class="numberof">100 items</option>
+            <option value="<?php echo base_url(); ?>items/limit/data/?numberOf=200" class="numberof">200 items</option>
         </select>
     </div>
 
