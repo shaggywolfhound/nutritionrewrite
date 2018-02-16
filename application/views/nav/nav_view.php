@@ -6,7 +6,7 @@
  * Time: 20:40
  */
 ?>
-<div id="wrapper">
+<div id="wrapper_nav" class="nav">
     <h1> Navigation</h1>
     <ul>
         <li><a href="#">Home</a></li>

@@ -7,7 +7,7 @@
  */
 ?>
 
-<div id="wrapper">
+<div id="wrapper_view" class="item_search">
 
     <?php if($this->session->userdata('logged_in')):?>
     <h1>Search results page</h1>
@@ -17,32 +17,32 @@
             <?php echo $this->session->flashdata('errors'); ?>
         <?php endif; ?>
 
-    <div class="searchBox">
-        <?php echo form_open('items/search',$attributes); ?>
-        <div class="form-group">
-            <?php echo form_label('Search');?>
-            <?php
-            $data = array(
-                'class'=>'form-control',
-                'name'=>'search',
-                'placeholder'=>'Search here'
-            );
-            ?>
-            <?php echo form_input($data);?>
-        </div>
-        <div class="form-group">
-            <?php
-            $data = array(
-                'class'=>'btn btn-primary',
-                'name'=>'submit',
-                'value'=>'Submit'
-            );
-            ?>
-            <?php echo form_submit($data);?>
-        </div>
-        <?php echo form_close(); ?>
-    </div>
 
+        <div class="searchBox">
+            <form action="<?php echo base_url()?>items/search/data" method="get">
+                <div class="form-group">
+                    <?php echo form_label('Search');?>
+                    <?php
+                    $data = array(
+                        'class'=>'form-control',
+                        'name'=>'search',
+                        'placeholder'=>'Search here'
+                    );
+                    ?>
+                    <?php echo form_input($data);?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $data = array(
+                        'class'=>'btn btn-primary',
+                        'name'=>'submit',
+                        'value'=>'Submit'
+                    );
+                    ?>
+                    <?php echo form_submit($data);?>
+                </div>
+            </form>
+        </div>
 
     <?php if ($this->session->flashdata('item_deleted')){
         echo $this->session->flashdata('item_deleted');
