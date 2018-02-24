@@ -46,20 +46,42 @@
     };?>
 
     <a href="<?php echo base_url(); ?>items/new">Add new item</a>
-
-    <div class="pages">
-        <label>Number of items per page: </label>
-        <select>
-            <option value="<?php echo base_url(); ?>items/limit/data?numberOf=20" class="numberof">20 items</option>
-            <option value="<?php echo base_url(); ?>items/limit/data?numberOf=50" class="numberof">50 items</option>
-            <option value="<?php echo base_url(); ?>items/limit/data/?numberOf=100" class="numberof">100 items</option>
-            <option value="<?php echo base_url(); ?>items/limit/data/?numberOf=200" class="numberof">200 items</option>
-        </select>
+    <div id="Sorting">
+        <div class="itemsDisplayed">
+            <label>Number of items: </label>
+            <select>
+                <option value="numberOf=20" class="numberof" selected>20 items</option>
+                <option value="numberOf=50" class="numberof" >50 items</option>
+                <option value="numberOf=100" class="numberof" >100 items</option>
+                <option value="numberOf=200" class="numberof" >200 items</option>
+            </select>
+        </div>
+        <div class="sortBy">
+            <label>Sort By: </label>
+            <select>
+                <option value="sortby=product_id" class="sortByType" selected>Product Id</option>
+                <option value="sortby=prod_name" class="sortByType">Product Name</option>
+            </select>
+        </div>
+        <div class="sortDirection">
+            <label>Sort Direction</label>
+            <select>
+                <option value="sortdir=asc" class="sortDir" selected>Ascending</option>
+                <option value="sortdir=desc" class="sortDir">Descending</option>
+            </select>
+        </div>
+        <div class="pageNumber">
+            <label>Page Number</label>
+            <select>
+                <option value="pageno=1" class="pageno" selected>1</option>
+                <option value="pageno=2" class="pageno">2</option>
+            </select>
+        </div>
     </div>
 
     <table>
-        <th><a href="<?php echo base_url(); ?>items/sortby/product_id">Product ID</a></th>
-        <th><a href="<?php echo base_url(); ?>items/sortby/prod_name">Product Name</a></th>
+        <th><a class="prodIdSelect" href="">Product ID</a></th>
+        <th><a class="prodNameSelect" href="">Product Name</a></th>
         <th>Adjust</th>
         <th>Remove</th>
         <?php

@@ -15,7 +15,7 @@
 
 
 
-<div id="wrapper">
+<div id="wrapper_admin">
     <div class="col-xs-3">
         <?php if ($this->session->flashdata('login_success')){
             echo $this->session->flashdata('login_success');

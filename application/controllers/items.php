@@ -126,21 +126,20 @@ class Items extends CI_Controller{
         redirect("items");
     }
 
-    public function sortby($id){
-
-        if (isset($id)) {
-            $result = $this->items_model->get_items_sort($id);
-            $data['result'] = $result;
-            $data['main_view'] = 'items/items_view';
-            $this->load->view('layouts/main', $data);
-        }else{
-            $result = $this->items_model->get_items();
-            $data['result'] = $result;
-            $data['main_view'] = 'items/items_view';
-            $this->load->view('layouts/main', $data);
-        }
-
-    }
+//    public function sortby($id){
+//        if (isset($id)) {
+//            $result = $this->items_model->get_items_sort($id);
+//            $data['result'] = $result;
+//            $data['main_view'] = 'items/items_view';
+//            $this->load->view('layouts/main', $data);
+//        }else{
+//            $result = $this->items_model->get_items();
+//            $data['result'] = $result;
+//            $data['main_view'] = 'items/items_view';
+//            $this->load->view('layouts/main', $data);
+//        }
+//
+//    }
 
     public function search(){
 
