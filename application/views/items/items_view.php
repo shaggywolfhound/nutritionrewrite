@@ -90,8 +90,8 @@
     </div>
 
     <table>
-        <th><a class="prodIdSelect" href="">Product ID</a></th>
-        <th><a class="prodNameSelect" href="">Product Name</a></th>
+        <th><a class="prodIdSelect">Product ID</a></th>
+        <th><a class="prodNameSelect">Product Name</a></th>
         <th>Adjust</th>
         <th>Remove</th>
         <?php
