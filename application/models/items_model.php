@@ -14,11 +14,29 @@ class Items_model extends CI_Model{
         $result = $food_items->result_array();
         return $result;
     }
+
+    public function items_number(){
+        return $this->db->count_all('food_item');
+    }
+
     public function get_items_with_limit ($data) {
-        $numberOf = $data['numberOf'];
+        $numberOf = $data['numberOf'];//20
+        $sortby = $data['sortby'];
+        $sortdir = $data['sortdir'];
+        $pageno = $data['pageno'];//1
+
         $this->db->select(['product_id','prod_name']);
-        $this->db->order_by('prod_name','asc');
-        $this->db->limit($numberOf);
+        $this->db->order_by($sortby,$sortdir);
+
+        //depends on numberOf and page number
+        $startatres = (($numberOf*$pageno)-$numberOf);
+        $numberofres = ($numberOf);
+
+        if($startatres == 0){
+            $this->db->limit($numberofres);
+        }else {
+            $this->db->limit($numberofres, $startatres);
+        }
         $food_items = $this->db->get('food_item');
         $result = $food_items->result_array();
         return $result;

@@ -50,31 +50,41 @@
         <div class="itemsDisplayed">
             <label>Number of items: </label>
             <select>
-                <option value="numberOf=20" class="numberof" selected>20 items</option>
-                <option value="numberOf=50" class="numberof" >50 items</option>
-                <option value="numberOf=100" class="numberof" >100 items</option>
-                <option value="numberOf=200" class="numberof" >200 items</option>
+                <option value="numberOf=20" class="numberof" <?php if($numberOf ==20){echo 'selected';}?> >20 items</option>
+                <option value="numberOf=50" class="numberof" <?php if($numberOf ==50){echo 'selected';}?> >50 items</option>
+                <option value="numberOf=100" class="numberof" <?php if($numberOf ==100){echo 'selected';}?> >100 items</option>
+                <option value="numberOf=200" class="numberof" <?php if($numberOf ==200){echo 'selected';}?> >200 items</option>
             </select>
         </div>
         <div class="sortBy">
             <label>Sort By: </label>
             <select>
-                <option value="sortby=product_id" class="sortByType" selected>Product Id</option>
-                <option value="sortby=prod_name" class="sortByType">Product Name</option>
+                <option value="sortby=product_id" class="sortByType" <?php if($sortby == 'product_id'){echo 'selected';}?> >Product Id</option>
+                <option value="sortby=prod_name" class="sortByType" <?php if($sortby == 'prod_name'){echo 'selected';}?> >Product Name</option>
             </select>
         </div>
         <div class="sortDirection">
             <label>Sort Direction</label>
             <select>
-                <option value="sortdir=asc" class="sortDir" selected>Ascending</option>
-                <option value="sortdir=desc" class="sortDir">Descending</option>
+                <option value="sortdir=asc" class="sortDir" <?php if($sortdir == 'asc'){echo 'selected';}?> >Ascending</option>
+                <option value="sortdir=desc" class="sortDir" <?php if($sortdir == 'desc'){echo 'selected';}?> >Descending</option>
             </select>
         </div>
+
         <div class="pageNumber">
             <label>Page Number</label>
             <select>
-                <option value="pageno=1" class="pageno" selected>1</option>
-                <option value="pageno=2" class="pageno">2</option>
+                <?php
+                //need to know total number of records
+                $numberOfPages = ceil($numberOfRecords/$numberOf);
+
+                for($i=1; $i<=$numberOfPages; $i++){
+                    echo "<option value='pageno=" .$i ."'"." class='pageno'";
+                    if($pageno == $i){echo 'selected';}
+                    echo ">";
+                    echo "$i </option>\n";
+                }
+                ?>
             </select>
         </div>
     </div>

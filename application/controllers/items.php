@@ -11,15 +11,19 @@ include 'assets/variables.php';
 class Items extends CI_Controller{
 
     public function index(){
-        $result = $this->items_model->get_items();
-        $data['result'] = $result;
-        $data['main_view'] = 'items/items_view';
-        $this->load->view('layouts/main', $data);
-    }
-
-    public function limit(){
+        $numberOfRecords = $this->items_model->items_number();
         $data = $this->input->get();
-        $result = $this->items_model->get_items_with_limit($data);
+        //need to also check if got correct variables and not wrong ones
+        if (!(empty($data))&&array_key_exists('numberOf',$data)&&array_key_exists('sortby',$data)&&array_key_exists('sortdir',$data)&&array_key_exists('pageno',$data)){
+            $result = $this->items_model->get_items_with_limit($data);
+        }else{
+            $data['numberOf'] = '20';
+            $data['sortby'] = 'product_id';
+            $data['sortdir'] = 'asc';
+            $data['pageno'] = '1';
+            $result = $this->items_model->get_items_with_limit($data);
+        }
+        $data['numberOfRecords'] = $numberOfRecords;
         $data['result'] = $result;
         $data['main_view'] = 'items/items_view';
         $this->load->view('layouts/main', $data);

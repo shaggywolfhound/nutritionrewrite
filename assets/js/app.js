@@ -1,22 +1,28 @@
 $(document).ready(function() {
 
-    let $itemsref = $('.itemsDisplayed select');
-    let $sortBy = $('.sortBy select');
-    let $direction = $('.sortDirection select');
-    let $pageNumber = $('.pageNumber select');
+    $itemsref = $('.itemsDisplayed select');
+    $sortByref = $('.sortBy select');
+    $directionref = $('.sortDirection select');
+    $pageNumberref = $('.pageNumber select');
 
-    let $url = $itemsref.val();
+    $('#Sorting').find('select').on('change', function () {
+        //get current settings
+        $items = $itemsref.val();
+        $sortBy = $sortByref.val();
+        $direction = $directionref.val();
+        $pageNumber = $pageNumberref.val();
+        $currentUrl = window.location.href;
+        $containsGet = $currentUrl.indexOf('?');
 
-    $itemsref.on('change', function () {
-        $url = $itemsref.val();
-        // window.location.href = $url;
+        if ($containsGet === -1){
+            $url = $currentUrl;
+        }else{
+            $url = $currentUrl.substring(0,$currentUrl.indexOf('?'));
+        }
+        //construct url
+        $url = $url + '?' + $items + "&" + $sortBy + "&" + $direction + "&" + $pageNumber;
+        window.location.href = $url;
 
     });
 
-    // $(".prodIdSelect").attr("href", $url + "&prodSelect=asc");
-    // $(".prodIdSelect").attr("href", $url + "&prodSelect=asc");
-    //
-
-    // prodIdSelect
-    // prodNameSelect
 });

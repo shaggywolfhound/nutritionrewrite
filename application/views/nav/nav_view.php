@@ -12,7 +12,7 @@
         <li><a href="#">Home</a></li>
 
         <?php if($this->session->userdata('logged_in')):?>
-        <li><a href="<?php echo base_url();?>items/limit/data?numberOf=20">Items</a></li>
+        <li><a href="<?php echo base_url();?>items">Items</a></li>
         <li><a href="#">Recipe</a></li>
         <li><a href="#">Diary</a></li>
         <li><a href="#">Analysis</a></li>
