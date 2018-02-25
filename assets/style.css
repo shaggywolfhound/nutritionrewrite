@@ -58,6 +58,9 @@ body{
 #wrapper_view{
     background-color: #9babb9;
 }
+#wrapper_admin{
+    background-color: #9babb9;
+}
 
 input:invalid{
     border: 1px solid red;

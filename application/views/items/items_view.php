@@ -46,20 +46,52 @@
     };?>
 
     <a href="<?php echo base_url(); ?>items/new">Add new item</a>
+    <div id="Sorting">
+        <div class="itemsDisplayed">
+            <label>Number of items: </label>
+            <select>
+                <option value="numberOf=20" class="numberof" <?php if($numberOf ==20){echo 'selected';}?> >20 items</option>
+                <option value="numberOf=50" class="numberof" <?php if($numberOf ==50){echo 'selected';}?> >50 items</option>
+                <option value="numberOf=100" class="numberof" <?php if($numberOf ==100){echo 'selected';}?> >100 items</option>
+                <option value="numberOf=200" class="numberof" <?php if($numberOf ==200){echo 'selected';}?> >200 items</option>
+            </select>
+        </div>
+        <div class="sortBy">
+            <label>Sort By: </label>
+            <select>
+                <option value="sortby=product_id" class="sortByType" <?php if($sortby == 'product_id'){echo 'selected';}?> >Product Id</option>
+                <option value="sortby=prod_name" class="sortByType" <?php if($sortby == 'prod_name'){echo 'selected';}?> >Product Name</option>
+            </select>
+        </div>
+        <div class="sortDirection">
+            <label>Sort Direction</label>
+            <select>
+                <option value="sortdir=asc" class="sortDir" <?php if($sortdir == 'asc'){echo 'selected';}?> >Ascending</option>
+                <option value="sortdir=desc" class="sortDir" <?php if($sortdir == 'desc'){echo 'selected';}?> >Descending</option>
+            </select>
+        </div>
 
-    <div class="pages">
-        <label>Number of items per page: </label>
-        <select>
-            <option value="<?php echo base_url(); ?>items/data?numberOf=12" class="numberof">12 items</option>
-            <option value="<?php echo base_url(); ?>items/data?numberOf=24" class="numberof">24 items</option>
-            <option value="<?php echo base_url(); ?>items/data/?numberOf=36" class="numberof">36 items</option>
-            <option value="<?php echo base_url(); ?>items/data/?numberOf=all" class="numberof">All items</option>
-        </select>
+        <div class="pageNumber">
+            <label>Page Number</label>
+            <select>
+                <?php
+                //need to know total number of records
+                $numberOfPages = ceil($numberOfRecords/$numberOf);
+
+                for($i=1; $i<=$numberOfPages; $i++){
+                    echo "<option value='pageno=" .$i ."'"." class='pageno'";
+                    if($pageno == $i){echo 'selected';}
+                    echo ">";
+                    echo "$i </option>\n";
+                }
+                ?>
+            </select>
+        </div>
     </div>
 
     <table>
-        <th><a href="<?php echo base_url(); ?>items/sortby/product_id">Product ID</a></th>
-        <th><a href="<?php echo base_url(); ?>items/sortby/prod_name">Product Name</a></th>
+        <th><a class="prodIdSelect" href="">Product ID</a></th>
+        <th><a class="prodNameSelect" href="">Product Name</a></th>
         <th>Adjust</th>
         <th>Remove</th>
         <?php
