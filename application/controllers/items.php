@@ -130,42 +130,24 @@ class Items extends CI_Controller{
         redirect("items");
     }
 
-//    public function sortby($id){
-//        if (isset($id)) {
-//            $result = $this->items_model->get_items_sort($id);
-//            $data['result'] = $result;
-//            $data['main_view'] = 'items/items_view';
-//            $this->load->view('layouts/main', $data);
-//        }else{
-//            $result = $this->items_model->get_items();
-//            $data['result'] = $result;
-//            $data['main_view'] = 'items/items_view';
-//            $this->load->view('layouts/main', $data);
-//        }
-//
-//    }
-
     public function search(){
 
         $this->form_validation->set_rules("search", "Search term", 'required');
         $this->form_validation->run();
-
 
         if($this->form_validation->run() == FALSE){
             $data = array(
                 'errors' => validation_errors()
             );
             $this->session->set_flashdata($data);
-            //redirect("items/search");
+
         }
         $search = $this->input->get();
 
-        //var_dump($search);
         $search = $search['search'];
 
         $result = $this->items_model->search_items($search);
 
-        //var_dump($result);
         $data['result'] = $result;
         $data['main_view'] = 'items/item_search_view';
         $this->load->view('layouts/main', $data);

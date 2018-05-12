@@ -76,17 +76,20 @@
             ?>
             <?php echo form_password($data);?>
         </div>
-        <div class="form-group">
-            <?php echo form_label('Confirm Password');?>
-            <?php
-            $data = array(
-                'class'=>'form-control',
-                'name'=>'confirm_password',
-                'placeholder'=>'Confirm Password'
-            );
-            ?>
-            <?php echo form_password($data);?>
-        </div>
+<!--    not needed at login-->
+<!--    -->
+<!--        <div class="form-group">-->
+<!--            --><?php //echo form_label('Confirm Password');?>
+<!--            --><?php
+//            $data = array(
+//                'class'=>'form-control',
+//                'name'=>'confirm_password',
+//                'placeholder'=>'Confirm Password'
+//            );
+//            ?>
+<!--            --><?php //echo form_password($data);?>
+<!--        </div>-->
+<!--    -->
         <div class="form-group">
             <?php
             $data = array(
